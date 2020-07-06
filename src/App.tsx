@@ -1,6 +1,6 @@
 import Menu from './components/Menu';
-import PageMenuEnabled from './pages/PageMenuEnabled';
-import PageMenuDisabled from './pages/PageMenuDisabled';
+import PageMenuDraggable from './pages/PageMenuDraggable';
+import PageMenuNotDraggable from './pages/PageMenuNotDraggable';
 import React, { useState } from 'react';
 import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
@@ -27,21 +27,21 @@ import './theme/variables.css';
 
 const App: React.FC = () => {
 
-  const [menuEnabled, setMenuEnabled] = useState(true);
+  const [menuDraggable, setMenuDraggable] = useState(true);
 
   return (
     <IonApp>
       <IonReactRouter>
         <IonSplitPane contentId="main">
-          <Menu menuEnabled={menuEnabled} setMenuEnabled={setMenuEnabled}/>
+          <Menu menuDraggable={menuDraggable} setMenuDraggable={setMenuDraggable}/>
           <IonRouterOutlet id="main">
-            <Route path="/page/menu-enabled" exact >
-              <PageMenuEnabled/>
+            <Route path="/page/menu-draggable" exact >
+              <PageMenuDraggable/>
             </Route>
-            <Route path="/page/menu-disabled" exact >
-              <PageMenuDisabled setMenuEnabled={setMenuEnabled}/>
+            <Route path="/page/menu-not-draggable" exact >
+              <PageMenuNotDraggable setMenuDraggable={setMenuDraggable}/>
             </Route>
-            <Redirect from="/" to="/page/menu-enabled" exact />
+            <Redirect from="/" to="/page/menu-draggable" exact />
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

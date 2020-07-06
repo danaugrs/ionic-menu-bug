@@ -1,7 +1,7 @@
 import { IonButton, IonButtons, IonContent, IonHeader, IonBackButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 
-const Page: React.FC<{setMenuEnabled: any}> = ({ setMenuEnabled }) => {
+const PageMenuNotDraggable: React.FC<{setMenuDraggable: any}> = ({ setMenuDraggable }) => {
 
   return (
     <IonPage>
@@ -9,18 +9,18 @@ const Page: React.FC<{setMenuEnabled: any}> = ({ setMenuEnabled }) => {
         <IonToolbar>
           <IonButtons slot="start">
             {/* Note: we can't add an onClick listener to the IonBackButton. Why? */}
-            {/* <IonBackButton defaultHref="/" onClick={() => setMenuEnabled(true)} /> */}
-            <IonButton routerLink="/" onClick={() => setMenuEnabled(true)}>Back</IonButton>
+            {/* <IonBackButton defaultHref="/" onClick={() => setMenuDraggable(true)} /> */}
           </IonButtons>
-          <IonTitle>Page Menu Disabled</IonTitle>
+          <IonTitle>Page Menu Not Draggable</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent>
-        The menu is disabled on this page
+        The menu should be not draggable on this page but it is.
+        <IonButton routerLink="/" onClick={() => setMenuDraggable(true)}>Make menu draggable and go back</IonButton>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Page;
+export default PageMenuNotDraggable;

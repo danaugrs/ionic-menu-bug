@@ -1,7 +1,7 @@
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 
-const Page: React.FC = () => {
+const PageMenuDraggable: React.FC = () => {
 
   return (
     <IonPage>
@@ -10,15 +10,15 @@ const Page: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>Page Menu Enabled</IonTitle>
+          <IonTitle>Page Menu Draggable</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent>
-        The menu is enabled on this page
+        The menu is draggable on this page.
       </IonContent>
     </IonPage>
   );
 };
 
-export default Page;
+export default PageMenuDraggable;

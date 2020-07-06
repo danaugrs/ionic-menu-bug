@@ -12,22 +12,22 @@ import {
 import React from 'react';
 import './Menu.css';
 
-const Menu: React.FC<{menuEnabled: any, setMenuEnabled: any}> = ({ menuEnabled, setMenuEnabled }) => {
+const Menu: React.FC<{menuDraggable: any, setMenuDraggable: any}> = ({ menuDraggable, setMenuDraggable }) => {
 
   return (
-    <IonMenu contentId="main" type="overlay" disabled={!menuEnabled}>
+    <IonMenu contentId="main" type="push" draggable={menuDraggable}>
       <IonContent>
         <IonList id="inbox-list">
           <IonListHeader>Inbox</IonListHeader>
           <IonNote>hi@ionicframework.com</IonNote>
           <IonMenuToggle key="0" autoHide={false}>
-            <IonItem routerLink={'/page/menu-enabled'} routerDirection="none" lines="none" detail={false}>
-              <IonLabel>MenuEnabledPage</IonLabel>
+            <IonItem routerLink={'/page/menu-draggable'} routerDirection="none" lines="none" detail={false}>
+              <IonLabel>PageMenuDraggable</IonLabel>
             </IonItem>
           </IonMenuToggle>
           <IonMenuToggle key="2" autoHide={false}>
-            <IonItem onClick={() => setMenuEnabled(false)} routerLink={'/page/menu-disabled'} routerDirection="none" lines="none" detail={false}>
-              <IonLabel>MenuDisabledPage</IonLabel>
+            <IonItem onClick={() => setMenuDraggable(false)} routerLink={'/page/menu-not-draggable'} routerDirection="none" lines="none" detail={false}>
+              <IonLabel>PageMenuNotDraggable</IonLabel>
             </IonItem>
           </IonMenuToggle>
         </IonList>
